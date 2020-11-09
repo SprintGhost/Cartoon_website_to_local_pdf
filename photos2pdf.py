@@ -16,7 +16,3 @@ makePdf("result.pdf", ["./test_picture/" + imgFileName for imgFileName in os.lis
 					   if imgFileName.endswith("png")])
 
 
-# for imgFileName in os.listdir(r'C:\Users\U332588\OneDrive - Danfoss\Pictures'):
-#     if imgFileName.endswith("png"):
-#         # print('C:\Users\U332588\OneDrive - Danfoss\Pictures' + imgFileName)
-#         print(os.path.abspath(imgFileName))
