@@ -1,2 +1,4 @@
 test_picture/*
-result.pdf
+*.pdf
+*.jpg
+*.png
