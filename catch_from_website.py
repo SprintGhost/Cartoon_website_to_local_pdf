@@ -31,6 +31,12 @@ def get_link(url):
     data = response.read()
     soup = BeautifulSoup(data, 'html.parser')
     tags = soup.find('div', class_='UdPag').find_all('mip-link')
+    imags = soup.find_all('mip-img')
+    print(imags)
+    for each in imags:
+        print (each.get('src'),end= "\n")
+    # imags = imags.find("mip-img", class_= "mip-element mip-layout-container mip-img-loaded")
+    # imags = soup('img')
     for tag in tags:
         print(tag.get('href', None), end = "\n")
         return tag.get('href', None)
@@ -38,9 +44,10 @@ def get_link(url):
 if __name__ == '__main__':
     url ="https://m.xialashimanhua.com/manhua/huibuqudexiatian/1335161.html"
     screen_shot(url)
-    while total_pitcures < 10 and url != "https://m.xialashimanhua.com/manhua/huibuqudexiatian/1335232-133.html":
+    while total_pitcures < 2 and url != "https://m.xialashimanhua.com/manhua/huibuqudexiatian/1335232-133.html":
         url = get_link(url)
-        screen_shot(url)
+        total_pitcures += 1
+        # screen_shot(url)
 
 
 
